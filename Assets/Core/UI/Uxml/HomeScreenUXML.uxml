@@ -1,0 +1,7 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="home-screen__parent" style="flex-grow: 1;">
+        <engine:Label text="HomeScreen&#10;" name="home-screen__header" />
+        <engine:Button text="Play" name="home-screen__play" />
+        <engine:Button text="Quit" name="home-screen__quit" />
+    </engine:VisualElement>
+</engine:UXML>

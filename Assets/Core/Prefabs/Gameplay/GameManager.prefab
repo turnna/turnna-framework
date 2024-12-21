@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1995476228022919177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669765754124797523}
+  - component: {fileID: 3507407307503858920}
+  - component: {fileID: 2637567899119250137}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &669765754124797523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995476228022919177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3507407307503858920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995476228022919177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a20c1b7b1c07c4c9df559d993e5779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2637567899119250137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995476228022919177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cf51efc0f94f44adec10eed2eb08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoStart: 1
+  m_GameSetup: {fileID: 3507407307503858920}
+  m_GameStarted: {fileID: 11400000, guid: ff57dcfbc5d8edd4d8535ee5d76f138b, type: 2}
+  m_GameEnded: {fileID: 11400000, guid: 839d91bdaf7ca1440bfc7e291c706025, type: 2}
+  m_LastSceneUnloaded: {fileID: 11400000, guid: c04a51c79d3254d4c83df3f267dd664b, type: 2}
+  m_HomeScreenShown: {fileID: 11400000, guid: 5c05915fc8394d041be49bf361f719d0, type: 2}
+  m_GameQuit: {fileID: 11400000, guid: 6c711529550a4aa4ca2899133e06e984, type: 2}

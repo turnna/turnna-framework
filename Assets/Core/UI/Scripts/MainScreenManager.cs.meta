@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1ef198f599cdea34296fc0236f2e9f80
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_HomeScreen: {instanceID: 0}
+  - m_ScreenGoBack: {fileID: 11400000, guid: 11c5248f8cc277f4ea760c412affd1bf, type: 2}
+  - m_AllScreensHidden: {fileID: 11400000, guid: c252de6bf8ddd8145ad9d7c5c1051086, type: 2}
+  - m_HomeScreenShown: {fileID: 11400000, guid: 5c05915fc8394d041be49bf361f719d0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

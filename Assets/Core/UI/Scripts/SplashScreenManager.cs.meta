@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 25e1af7f3b1011740bb39cf5cf957fbf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_UIDocument: {instanceID: 0}
+  - m_LoadProgressUpdated: {fileID: 11400000, guid: 4a22365ba07b0c54881afa767eb99114, type: 2}
+  - m_PreloadComplete: {fileID: 11400000, guid: 54d6a296790316945b03e0646a94e8aa, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
