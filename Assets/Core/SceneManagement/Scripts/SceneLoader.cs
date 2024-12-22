@@ -16,11 +16,11 @@ namespace Assets.Core.SceneManagement.Scripts
         // Fields
         [Header("Listen to Event Channels")]
         [Tooltip("Loads a scene by its Scene path string")]
-        [SerializeField, Optional] private SceneFieldChannelSO m_LoadScenePathEventChannel;
+        [SerializeField, Optional] private SceneFieldChannelSO m_LoadPathEventChannel;
         [Tooltip("Reloads the current scene")]
-        [SerializeField, Optional] private VoidEventChannelSO m_ReloadSceneEventChannel;
+        [SerializeField, Optional] private VoidEventChannelSO m_ReloadEventChannel;
         [Tooltip("Loads the next scene by index in the Build Settings")]
-        [SerializeField, Optional] private VoidEventChannelSO m_LoadNextSceneEventChannel;
+        [SerializeField, Optional] private VoidEventChannelSO m_LoadNextEventChannel;
 
         [Tooltip("Unloads the last scene, stops gameplay")]
         [SerializeField, Optional] private VoidEventChannelSO m_LastSceneUnloaded;
@@ -35,11 +35,11 @@ namespace Assets.Core.SceneManagement.Scripts
 
         private void OnEnable()
         {
-            if (m_LoadScenePathEventChannel != null)
-                m_LoadScenePathEventChannel.OnEventRaised += LoadSceneBySceneField;
+            if (m_LoadPathEventChannel != null)
+                m_LoadPathEventChannel.OnEventRaised += LoadSceneBySceneField;
 
-            if (m_ReloadSceneEventChannel != null)
-                m_ReloadSceneEventChannel.OnEventRaised += ReloadScene;
+            if (m_ReloadEventChannel != null)
+                m_ReloadEventChannel.OnEventRaised += ReloadScene;
 
             if (m_LastSceneUnloaded != null)
                 m_LastSceneUnloaded.OnEventRaised += UnloadScene;
@@ -47,11 +47,11 @@ namespace Assets.Core.SceneManagement.Scripts
 
         private void OnDisable()
         {
-            if (m_LoadScenePathEventChannel != null)
-                m_LoadScenePathEventChannel.OnEventRaised -= LoadSceneBySceneField;
+            if (m_LoadPathEventChannel != null)
+                m_LoadPathEventChannel.OnEventRaised -= LoadSceneBySceneField;
 
-            if (m_ReloadSceneEventChannel != null)
-                m_ReloadSceneEventChannel.OnEventRaised -= ReloadScene;
+            if (m_ReloadEventChannel != null)
+                m_ReloadEventChannel.OnEventRaised -= ReloadScene;
 
             if (m_LastSceneUnloaded != null)
                 m_LastSceneUnloaded.OnEventRaised -= UnloadScene;

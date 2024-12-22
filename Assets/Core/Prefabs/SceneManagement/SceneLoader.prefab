@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb16b4a187838940b7379ccf53cc00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoadScenePathEventChannel: {fileID: 11400000, guid: 7bd100562eb460a4d8af3479ad031a82, type: 2}
-  m_ReloadSceneEventChannel: {fileID: 11400000, guid: 0e0c394d91915f04bb6feaf94ff68ea2, type: 2}
-  m_LoadNextSceneEventChannel: {fileID: 11400000, guid: fc605c2afed8dd147bbb28bf1549a534, type: 2}
+  m_LoadPathEventChannel: {fileID: 11400000, guid: 7bd100562eb460a4d8af3479ad031a82, type: 2}
+  m_ReloadEventChannel: {fileID: 11400000, guid: 0e0c394d91915f04bb6feaf94ff68ea2, type: 2}
+  m_LoadNextEventChannel: {fileID: 11400000, guid: fc605c2afed8dd147bbb28bf1549a534, type: 2}
   m_LastSceneUnloaded: {fileID: 11400000, guid: c04a51c79d3254d4c83df3f267dd664b, type: 2}
