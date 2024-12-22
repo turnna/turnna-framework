@@ -12,17 +12,20 @@ using UnityEngine.UIElements;
 namespace Assets.Core.Input.Binders
 {
     /// <summary>
-    /// This class connects a UI Elements Button to an event channel that takes no parameters.
+    /// This class binds two VoidEventChannelSO objects together. When an event is raised on the listen event channel,
+    /// it will broadcast the event on the broadcast event channel after a specified delay.
     /// </summary>
-    public class InputVoidEventChannelBinder : MonoBehaviour
+    public class EventChannelsBinder : MonoBehaviour
     {
 
-        [SerializeField] private CoreInputReaderSO m_inputReader;
+        [Header("Listen to Event Channel")]
+        [Tooltip("The event channel to listen to.")]
+        [SerializeField] private VoidEventChannelSO m_listenEventChannel;
 
 
         [Header("Broadcast on Event Channel")]
         [Tooltip("The event channel to raise.")]
-        [SerializeField] private VoidEventChannelSO m_EventChannel;
+        [SerializeField] private VoidEventChannelSO m_broadCastEventChannel;
         [Space]
         [Tooltip("Cooldown window between input.")]
         [SerializeField] private float m_Delay = 0.5f;
@@ -37,12 +40,12 @@ namespace Assets.Core.Input.Binders
 
         private void Start()
         {
-            m_inputReader.Escape += RaiseEvent;
+            m_listenEventChannel.OnEventRaised += RaiseEvent;
         }
 
         private void OnDisable()
         {
-            m_inputReader.Escape -= RaiseEvent;
+            m_listenEventChannel.OnEventRaised -= RaiseEvent;
         }
 
         private void RaiseEvent()
@@ -50,7 +53,7 @@ namespace Assets.Core.Input.Binders
             if (Time.time < m_TimeToNextEvent)
                 return;
 
-            m_EventChannel.RaiseEvent();
+            m_broadCastEventChannel.RaiseEvent();
             m_TimeToNextEvent = Time.time + m_Delay;
         }
 

@@ -3,32 +3,31 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using Assets.Core.Utilities.ScriptableObjects;
 using Assets.Core.Input;
+using Assets.Core.EventChannels.ScriptableObjects;
+using System;
 
 
 namespace Assets.Core.Input.ScriptableObjects
 {
 
     /// <summary>
-    /// This serves as an intermediary object between the InputActions and the GameObjects receiving input.
-    /// GameObjects listen for UnityActions instead of subscribing to InputSystem events directly.
+    /// This class is responsible for reading input actions and raising corresponding events.
+    /// It implements the CoreControl.IUIActions interface to handle UI input actions.
+    /// The input actions include Click, Navigate, and Escape, which are mapped to event channels.
     /// </summary>
     [CreateAssetMenu(fileName = "CoreInputReaderSO", menuName = "Input/CoreInputReaderSO")]
-    public class CoreInputReaderSO : DescriptionSO, CoreControl.IUIActions
+    public class CoreInputReaderSO : DescriptionSO, CoreControl.IGameplayActions
     {
         private CoreControl m_CoreControl;
 
-        public event UnityAction<Vector2> Navigate = delegate { };
-        public event UnityAction Click = delegate { };
-        public event UnityAction Escape = delegate { };
-
+        public VoidEventChannelSO m_InputEscapeEventChannel;
 
         public void OnEnable()
         {
             if (m_CoreControl == null)
             {
                 m_CoreControl = new CoreControl();
-                m_CoreControl.UI.SetCallbacks(this);
-                m_CoreControl.Enable();
+                m_CoreControl.Gameplay.SetCallbacks(this);
             }
         }
 
@@ -37,21 +36,22 @@ namespace Assets.Core.Input.ScriptableObjects
             m_CoreControl.Disable();
         }
 
-        public void OnClick(InputAction.CallbackContext context)
+        public void EnableGameplayInput()
         {
-            Click?.Invoke();
+            m_CoreControl.Gameplay.Enable();
+        }
+        public void DisableGameplayInput()
+        {
+            m_CoreControl.Gameplay.Disable();
         }
 
-        public void OnNavigate(InputAction.CallbackContext context)
-        {
-            Navigate?.Invoke(context.ReadValue<Vector2>());
-        }
 
         public void OnEscape(InputAction.CallbackContext context)
         {
-            Escape?.Invoke();
+            if (m_CoreControl.Gameplay.Escape.WasPerformedThisFrame())
+            {
+                m_InputEscapeEventChannel.RaiseEvent();
+            }
         }
-
-
     }
 }

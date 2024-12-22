@@ -1,4 +1,5 @@
 using Assets.Core.EventChannels.ScriptableObjects;
+using Assets.Core.Input.ScriptableObjects;
 using Assets.Core.Utilities;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ namespace Assets.Core.Gameplay
         [SerializeField] private bool m_AutoStart = true;
         [Tooltip("Required component for setup and initialization")]
         [SerializeField] private GameSetup m_GameSetup;
+        [Tooltip("ScriptableObject for relaying input")]
+        [SerializeField] private CoreInputReaderSO m_InputReader;
 
         [Header("Broadcast on Event Channels")]
         [Tooltip("Begin gameplay")]
@@ -67,8 +70,13 @@ namespace Assets.Core.Gameplay
         private void Initialize()
         {
             NullRefChecker.Validate(this);
-            // m_GameSetup.Initialize(m_GameData, m_InputReader);
+
+            // Initialize the game 
+            m_GameSetup.Initialize(m_InputReader); // TODO: async
             // m_GameSetup.SetupLevel();
+
+            // Enable gameplay input
+            m_InputReader.EnableGameplayInput();
         }
 
 
@@ -94,6 +102,10 @@ namespace Assets.Core.Gameplay
 
         private void OnUnloadScene()
         {
+            // Disable game playinput
+            m_InputReader.DisableGameplayInput();
+
+            // Raise event to go back to main menu scene
             m_LastSceneUnloaded.RaiseEvent();
             m_HomeScreenShown.RaiseEvent();
 

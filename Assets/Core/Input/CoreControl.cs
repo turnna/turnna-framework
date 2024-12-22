@@ -26,27 +26,9 @@ namespace Assets.Core.Input
     ""name"": ""CoreControl"",
     ""maps"": [
         {
-            ""name"": ""UI"",
+            ""name"": ""Gameplay"",
             ""id"": ""70762da3-1eb0-4a8b-8d56-efbb693bac5c"",
             ""actions"": [
-                {
-                    ""name"": ""Navigate"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""7cec50dc-dafb-42d1-b7c6-41c633c15ddf"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Click"",
-                    ""type"": ""Button"",
-                    ""id"": ""305dd365-b15a-4a37-b690-4d934ea36670"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
                 {
                     ""name"": ""Escape"",
                     ""type"": ""Button"",
@@ -58,72 +40,6 @@ namespace Assets.Core.Input
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""f8b13124-b82a-4625-be27-d18f92a32f1d"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""ae7f0e3c-5ee5-46ce-bfed-10dffbcb34c0"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""c95e1510-2c7e-4c16-94b6-56845b08501f"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""24057b87-c1b9-44ef-8f3a-47ee1ee87c3d"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""625d1bc3-2a46-48af-b98a-a0982e6f6451"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c362834d-1b7b-4d39-9013-6b2878d3f8da"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""1d1aa1e3-4e86-4f97-bc98-5642a9253044"",
@@ -140,16 +56,14 @@ namespace Assets.Core.Input
     ],
     ""controlSchemes"": []
 }");
-            // UI
-            m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-            m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
-            m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
-            m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
+            // Gameplay
+            m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+            m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
         }
 
         ~@CoreControl()
         {
-            UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, CoreControl.UI.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, CoreControl.Gameplay.Disable() has not been called.");
         }
 
         public void Dispose()
@@ -208,71 +122,53 @@ namespace Assets.Core.Input
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // UI
-        private readonly InputActionMap m_UI;
-        private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-        private readonly InputAction m_UI_Navigate;
-        private readonly InputAction m_UI_Click;
-        private readonly InputAction m_UI_Escape;
-        public struct UIActions
+        // Gameplay
+        private readonly InputActionMap m_Gameplay;
+        private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
+        private readonly InputAction m_Gameplay_Escape;
+        public struct GameplayActions
         {
             private @CoreControl m_Wrapper;
-            public UIActions(@CoreControl wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
-            public InputAction @Click => m_Wrapper.m_UI_Click;
-            public InputAction @Escape => m_Wrapper.m_UI_Escape;
-            public InputActionMap Get() { return m_Wrapper.m_UI; }
+            public GameplayActions(@CoreControl wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
+            public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
-            public void AddCallbacks(IUIActions instance)
+            public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+            public void AddCallbacks(IGameplayActions instance)
             {
-                if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
-                @Navigate.started += instance.OnNavigate;
-                @Navigate.performed += instance.OnNavigate;
-                @Navigate.canceled += instance.OnNavigate;
-                @Click.started += instance.OnClick;
-                @Click.performed += instance.OnClick;
-                @Click.canceled += instance.OnClick;
+                if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
                 @Escape.started += instance.OnEscape;
                 @Escape.performed += instance.OnEscape;
                 @Escape.canceled += instance.OnEscape;
             }
 
-            private void UnregisterCallbacks(IUIActions instance)
+            private void UnregisterCallbacks(IGameplayActions instance)
             {
-                @Navigate.started -= instance.OnNavigate;
-                @Navigate.performed -= instance.OnNavigate;
-                @Navigate.canceled -= instance.OnNavigate;
-                @Click.started -= instance.OnClick;
-                @Click.performed -= instance.OnClick;
-                @Click.canceled -= instance.OnClick;
                 @Escape.started -= instance.OnEscape;
                 @Escape.performed -= instance.OnEscape;
                 @Escape.canceled -= instance.OnEscape;
             }
 
-            public void RemoveCallbacks(IUIActions instance)
+            public void RemoveCallbacks(IGameplayActions instance)
             {
-                if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
-            public void SetCallbacks(IUIActions instance)
+            public void SetCallbacks(IGameplayActions instance)
             {
-                foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
-        public UIActions @UI => new UIActions(this);
-        public interface IUIActions
+        public GameplayActions @Gameplay => new GameplayActions(this);
+        public interface IGameplayActions
         {
-            void OnNavigate(InputAction.CallbackContext context);
-            void OnClick(InputAction.CallbackContext context);
             void OnEscape(InputAction.CallbackContext context);
         }
     }
