@@ -557,6 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8601144186365088173}
   - component: {fileID: 4293223286837621361}
+  - component: {fileID: 5818111695803930275}
   m_Layer: 0
   m_Name: MenuButton
   m_TagString: Untagged
@@ -594,4 +595,19 @@ MonoBehaviour:
   m_Document: {fileID: 7734546601127055175}
   m_ButtonID: game-screen__menu
   m_EventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
+  m_Delay: 0.5
+--- !u!114 &5818111695803930275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660541048908129824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea671e1b46792164fa0416e197482f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listenEventChannel: {fileID: 11400000, guid: 12f811d2720bf7f4a817d83302eab1d7, type: 2}
+  m_broadCastEventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
   m_Delay: 0.5

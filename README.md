@@ -17,4 +17,4 @@ The main part of the project demonstrates the practical application of the core 
 - [ ] Integrate audio management (background music, sound effects)
 - [ ] Develop save/load system (player progress, settings)
 - [ ] Create core gameplay mechanics (player movement, interactions)
-- [ ] Establish control schemes (keyboard, mouse, gamepad)
+- [ ] Establish input management (keyboard, mouse, gamepad)

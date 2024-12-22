@@ -1,0 +1,34 @@
+{
+    "name": "CoreControl",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "70762da3-1eb0-4a8b-8d56-efbb693bac5c",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "efff79a8-05c2-44df-82a1-97bc46e5c420",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1d1aa1e3-4e86-4f97-bc98-5642a9253044",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

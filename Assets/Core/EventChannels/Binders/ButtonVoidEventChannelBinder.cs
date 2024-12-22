@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 
-namespace Assets.Core.UI.Scripts.EventChannelBinders
+namespace Assets.Core.EventChannels.Binders
 {
     /// <summary>
     /// This class connects a UI Elements Button to an event channel that takes no parameters.

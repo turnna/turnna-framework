@@ -1,11 +1,12 @@
 using Assets.Core.EventChannels.ScriptableObjects;
 using Assets.Core.SceneManagement.Scripts;
+using Assets.Core.UI.Scripts;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace Assets.Core.UI.Scripts.Binders
+namespace Assets.Core.EventChannels.Binders
 {
     [System.Serializable]
     public class ViewButtonSceneLoadData
