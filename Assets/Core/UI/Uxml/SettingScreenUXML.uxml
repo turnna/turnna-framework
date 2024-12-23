@@ -1,0 +1,10 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="setting-screen__parent" style="flex-grow: 1;">
+        <engine:VisualElement name="setting-screen__audio" style="flex-grow: 1;">
+            <engine:Label text="Audio" />
+            <engine:Slider label="Master" value="0.5" high-value="1" name="setting-audio__master" low-value="1E-06" fill="true" />
+            <engine:Slider label="Music" value="0.5" high-value="1" name="setting-audio__music" low-value="1E-06" fill="true" />
+            <engine:Slider label="SoundFX" value="0.5" high-value="1" name="setting-audio__sfx" low-value="1E-06" fill="true" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
