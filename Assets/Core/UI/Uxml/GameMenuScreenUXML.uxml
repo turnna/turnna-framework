@@ -1,11 +1,14 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Template name="AudioMixerUXML" src="project://database/Assets/Core/UI/Uxml/AudioMixerUXML.uxml?fileID=9197481963319205126&amp;guid=e29933bdb60a4ce46af497d68336a17a&amp;type=3#AudioMixerUXML" />
     <engine:VisualElement name="game-menu-screen__parent" style="align-self: center; align-content: center; width: 100%; height: 100%; justify-content: center; align-items: center;">
         <engine:VisualElement name="game-menu-screen__backdrop" style="flex-grow: 1; align-self: stretch; align-content: stretch; background-color: rgba(0, 0, 0, 0.76); position: absolute; width: 100%; height: 100%;" />
-        <engine:VisualElement name="game-menu-screen__dialog" style="flex-grow: 0; width: 50%; height: auto; flex-basis: 50%; background-color: rgb(255, 255, 255);">
+        <engine:VisualElement name="game-menu-screen__dialog" style="flex-grow: 0; width: 80%; height: auto; flex-basis: 80%; background-color: rgb(255, 255, 255);">
             <engine:VisualElement name="game-menu-screen__header">
                 <engine:Label text="Game Menu&#10;" name="game-menu-screen__title" />
             </engine:VisualElement>
-            <engine:VisualElement name="game-menu-screen__content" style="flex-grow: 1;" />
+            <engine:VisualElement name="game-menu-screen__content" style="flex-grow: 1;">
+                <engine:Instance template="AudioMixerUXML" />
+            </engine:VisualElement>
             <engine:VisualElement name="game-menu-screen__footer" style="flex-grow: 0; flex-basis: 15%; flex-direction: row-reverse;">
                 <engine:Button text="Resume&#10;" name="game-menu-screen__resume" />
                 <engine:Button text="Quit" name="game-menu-screen__quit" />
