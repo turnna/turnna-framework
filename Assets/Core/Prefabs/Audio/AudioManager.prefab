@@ -198,9 +198,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5892237135291639793}
-  - component: {fileID: 476137073161328707}
+  - component: {fileID: 3766645901454284486}
   m_Layer: 0
-  m_Name: CoreAudio
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ Transform:
   - {fileID: 2933695545124011398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &476137073161328707
+--- !u!114 &3766645901454284486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,9 +233,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7747371565197520959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fe00b7d6d1281488910ea7be41d10a, type: 3}
+  m_Script: {fileID: 11500000, guid: 19e2c20d603356a44a47240889209dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SaveSettings: {fileID: 11400000, guid: b379b17565e8234428e3bc5ce70150a5, type: 2}
+  m_masterVolumeChanged: {fileID: 11400000, guid: 1c5a05f6288d3004bbd36658094a8351, type: 2}
+  m_musicVolumeChanged: {fileID: 11400000, guid: d5a78956e1fc5c3428816758fb7d290f, type: 2}
+  m_sfxVolumeChanged: {fileID: 11400000, guid: d4b4056368696cb43aea75a3979e4366, type: 2}
+  m_CoreSaveData: {fileID: 11400000, guid: fb078086eec3b6d44b65bfa89d04ca33, type: 2}
 --- !u!1 &7910995043182729407
 GameObject:
   m_ObjectHideFlags: 0

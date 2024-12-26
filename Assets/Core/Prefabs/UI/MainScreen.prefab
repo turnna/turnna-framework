@@ -529,6 +529,54 @@ MonoBehaviour:
   m_ButtonID: home-screen__play
   m_EventChannel: {fileID: 11400000, guid: ea6f5904140c52b4e8fb5379add9885a, type: 2}
   m_Delay: 0.5
+--- !u!1 &4033532732606524157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227231975869084030}
+  - component: {fileID: 1280548236229009837}
+  m_Layer: 5
+  m_Name: SaveButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1227231975869084030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4033532732606524157}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8583049793317026359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280548236229009837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4033532732606524157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2013e85c20779a409802ad1f4dcb4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Document: {fileID: 5808742104531524029}
+  m_ButtonID: setting-screen__save
+  m_EventChannel: {fileID: 11400000, guid: b379b17565e8234428e3bc5ce70150a5, type: 2}
+  m_Delay: 0.5
 --- !u!1 &4038756520423559578
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +681,7 @@ Transform:
   m_Children:
   - {fileID: 6080313479045967338}
   - {fileID: 5144354395564911520}
+  - {fileID: 1227231975869084030}
   m_Father: {fileID: 6717716495113062082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5808742104531524029

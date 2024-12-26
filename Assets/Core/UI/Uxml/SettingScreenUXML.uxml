@@ -1,10 +1,10 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:Template name="AudioControl" src="project://database/Assets/Core/UI/Uxml/AudioControl.uxml?fileID=9197481963319205126&amp;guid=e29933bdb60a4ce46af497d68336a17a&amp;type=3#AudioControl" />
+    <engine:Template name="AudioControl" src="project://database/Assets/Core/UI/Uxml/AudioMixerUXML.uxml?fileID=9197481963319205126&amp;guid=e29933bdb60a4ce46af497d68336a17a&amp;type=3#AudioMixerUXML" />
     <engine:VisualElement name="setting-screen__parent" style="flex-grow: 1;">
         <engine:Button text="Back" name="setting-screen__back" />
         <engine:VisualElement name="setting-screen__audio" style="flex-grow: 1;">
-            <engine:Instance template="AudioControl" name="AudioControl">
-            </engine:Instance>
+            <engine:Instance template="AudioControl" name="AudioControl" />
         </engine:VisualElement>
+        <engine:Button text="Save" name="setting-screen__save" />
     </engine:VisualElement>
 </engine:UXML>

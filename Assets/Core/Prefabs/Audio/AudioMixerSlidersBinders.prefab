@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6897091956495463040}
   m_Layer: 5
-  m_Name: AudioMixer
+  m_Name: AudioMixerSlidersBinders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

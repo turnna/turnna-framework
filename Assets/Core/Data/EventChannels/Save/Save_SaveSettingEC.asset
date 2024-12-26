@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a0ce20a103c844c9a963f4ee0b6b5f, type: 3}
-  m_Name: Game_CoreGameData
+  m_Script: {fileID: 11500000, guid: 3b289dc8cebd82b4b9a74c80492e9d8f, type: 3}
+  m_Name: Save_SaveSettingEC
   m_EditorClassIdentifier: 
   m_Description: 
-  m_CoreSaveData: {fileID: 11400000, guid: fb078086eec3b6d44b65bfa89d04ca33, type: 2}

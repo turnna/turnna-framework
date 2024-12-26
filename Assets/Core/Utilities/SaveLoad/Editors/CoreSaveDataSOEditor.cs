@@ -22,7 +22,7 @@ namespace Assets.Core.Utilities.SaveLoad.Editors
 
             if (GUILayout.Button("Save JSON"))
             {
-                string resultingString = myCoreSaveDataSO.ExportToJson();
+                string resultingString = myCoreSaveDataSO.SaveToJson();
             }
         }
     }

@@ -28,9 +28,6 @@ namespace Assets.Core.Gameplay
 
         private GameDataSO m_GameData;
 
-        [SerializeField] private GameObject m_PlayerPrefab;
-
-
         private void OnValidate()
         {
             if (m_JsonFilename == string.Empty)
@@ -72,7 +69,6 @@ namespace Assets.Core.Gameplay
 
         public void SetupLevel()
         {
-            Instantiate(m_PlayerPrefab, Vector3.zero, Quaternion.identity);
 
         }
 

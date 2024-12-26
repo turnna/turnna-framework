@@ -1,5 +1,6 @@
 using Assets.Core.EventChannels.ScriptableObjects;
 using Assets.Core.Utilities;
+using Assets.Core.Utilities.SaveLoad.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -18,34 +19,54 @@ public class AudioMixerManager : Singleton<AudioMixerManager>
     public AudioMixerGroup MusicAudioGroup => audioMixer.FindMatchingGroups("Master/Music")[0];
     public AudioMixerGroup SFXAudioGroup => audioMixer.FindMatchingGroups("Master/SFX")[0];
 
-    private void OnEnable()
+    public void OnEnable()
     {
         m_masterVolumeChanged.OnEventRaised += SetMasterVolume;
         m_musicVolumeChanged.OnEventRaised += SetMusicVolume;
         m_sfxVolumeChanged.OnEventRaised += SetSFXVolume;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         m_masterVolumeChanged.OnEventRaised -= SetMasterVolume;
         m_musicVolumeChanged.OnEventRaised -= SetMusicVolume;
         m_sfxVolumeChanged.OnEventRaised -= SetSFXVolume;
     }
 
-
-
-    public void SetMasterVolume(float volume)
+    public AudioSaveData GetAudioSaveData()
     {
-        audioMixer.SetFloat("MasterVolume", volume > 0 ? Mathf.Log10(volume) * 20f : -80f);
+        return new AudioSaveData
+        {
+            masterVolume = MapDBToVolume(audioMixer.GetFloat("MasterVolume", out float masterVolume) ? masterVolume : -40f),
+            musicVolume = MapDBToVolume(audioMixer.GetFloat("MusicVolume", out float musicVolume) ? musicVolume : -40f),
+            sfxVolume = MapDBToVolume(audioMixer.GetFloat("SFXVolume", out float sfxVolume) ? sfxVolume : -40f)
+        };
     }
 
-    public void SetMusicVolume(float volume)
+    private void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", volume > 0 ? Mathf.Log10(volume) * 20f : -80f);
+        audioMixer.SetFloat("MasterVolume", MapVolumeToDB(volume));
     }
 
-    public void SetSFXVolume(float volume)
+    private void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("SFXVolume", volume > 0 ? Mathf.Log10(volume) * 20f : -80f);
+        audioMixer.SetFloat("MusicVolume", MapVolumeToDB(volume));
     }
+
+    private void SetSFXVolume(float volume)
+    {
+        audioMixer.SetFloat("SFXVolume", MapVolumeToDB(volume));
+    }
+
+    private float MapVolumeToDB(float volume)
+    {
+        return volume > 0 ? Mathf.Log10(volume) * 20f : -80f;
+    }
+
+    private float MapDBToVolume(float db)
+    {
+        return Mathf.Pow(10f, db / 20f);
+    }
+
+
 }
