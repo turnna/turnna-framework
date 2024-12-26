@@ -15,14 +15,12 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Assets.Core.Input
+public partial class @CoreControl: IInputActionCollection2, IDisposable
 {
-    public partial class @CoreControl: IInputActionCollection2, IDisposable
+    public InputActionAsset asset { get; }
+    public @CoreControl()
     {
-        public InputActionAsset asset { get; }
-        public @CoreControl()
-        {
-            asset = InputActionAsset.FromJson(@"{
+        asset = InputActionAsset.FromJson(@"{
     ""name"": ""CoreControl"",
     ""maps"": [
         {
@@ -56,120 +54,119 @@ namespace Assets.Core.Input
     ],
     ""controlSchemes"": []
 }");
-            // Gameplay
-            m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-            m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
-        }
-
-        ~@CoreControl()
-        {
-            UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, CoreControl.Gameplay.Disable() has not been called.");
-        }
-
-        public void Dispose()
-        {
-            UnityEngine.Object.Destroy(asset);
-        }
-
-        public InputBinding? bindingMask
-        {
-            get => asset.bindingMask;
-            set => asset.bindingMask = value;
-        }
-
-        public ReadOnlyArray<InputDevice>? devices
-        {
-            get => asset.devices;
-            set => asset.devices = value;
-        }
-
-        public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
-
-        public bool Contains(InputAction action)
-        {
-            return asset.Contains(action);
-        }
-
-        public IEnumerator<InputAction> GetEnumerator()
-        {
-            return asset.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public void Enable()
-        {
-            asset.Enable();
-        }
-
-        public void Disable()
-        {
-            asset.Disable();
-        }
-
-        public IEnumerable<InputBinding> bindings => asset.bindings;
-
-        public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
-        {
-            return asset.FindAction(actionNameOrId, throwIfNotFound);
-        }
-
-        public int FindBinding(InputBinding bindingMask, out InputAction action)
-        {
-            return asset.FindBinding(bindingMask, out action);
-        }
-
         // Gameplay
-        private readonly InputActionMap m_Gameplay;
-        private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-        private readonly InputAction m_Gameplay_Escape;
-        public struct GameplayActions
+        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+        m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
+    }
+
+    ~@CoreControl()
+    {
+        UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, CoreControl.Gameplay.Disable() has not been called.");
+    }
+
+    public void Dispose()
+    {
+        UnityEngine.Object.Destroy(asset);
+    }
+
+    public InputBinding? bindingMask
+    {
+        get => asset.bindingMask;
+        set => asset.bindingMask = value;
+    }
+
+    public ReadOnlyArray<InputDevice>? devices
+    {
+        get => asset.devices;
+        set => asset.devices = value;
+    }
+
+    public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
+
+    public bool Contains(InputAction action)
+    {
+        return asset.Contains(action);
+    }
+
+    public IEnumerator<InputAction> GetEnumerator()
+    {
+        return asset.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    public void Enable()
+    {
+        asset.Enable();
+    }
+
+    public void Disable()
+    {
+        asset.Disable();
+    }
+
+    public IEnumerable<InputBinding> bindings => asset.bindings;
+
+    public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
+    {
+        return asset.FindAction(actionNameOrId, throwIfNotFound);
+    }
+
+    public int FindBinding(InputBinding bindingMask, out InputAction action)
+    {
+        return asset.FindBinding(bindingMask, out action);
+    }
+
+    // Gameplay
+    private readonly InputActionMap m_Gameplay;
+    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
+    private readonly InputAction m_Gameplay_Escape;
+    public struct GameplayActions
+    {
+        private @CoreControl m_Wrapper;
+        public GameplayActions(@CoreControl wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public void AddCallbacks(IGameplayActions instance)
         {
-            private @CoreControl m_Wrapper;
-            public GameplayActions(@CoreControl wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
-            public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
-            public void Enable() { Get().Enable(); }
-            public void Disable() { Get().Disable(); }
-            public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-            public void AddCallbacks(IGameplayActions instance)
-            {
-                if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
-                @Escape.started += instance.OnEscape;
-                @Escape.performed += instance.OnEscape;
-                @Escape.canceled += instance.OnEscape;
-            }
-
-            private void UnregisterCallbacks(IGameplayActions instance)
-            {
-                @Escape.started -= instance.OnEscape;
-                @Escape.performed -= instance.OnEscape;
-                @Escape.canceled -= instance.OnEscape;
-            }
-
-            public void RemoveCallbacks(IGameplayActions instance)
-            {
-                if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
-                    UnregisterCallbacks(instance);
-            }
-
-            public void SetCallbacks(IGameplayActions instance)
-            {
-                foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
-                    UnregisterCallbacks(item);
-                m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
-                AddCallbacks(instance);
-            }
+            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
         }
-        public GameplayActions @Gameplay => new GameplayActions(this);
-        public interface IGameplayActions
+
+        private void UnregisterCallbacks(IGameplayActions instance)
         {
-            void OnEscape(InputAction.CallbackContext context);
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
         }
+
+        public void RemoveCallbacks(IGameplayActions instance)
+        {
+            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IGameplayActions instance)
+        {
+            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public GameplayActions @Gameplay => new GameplayActions(this);
+    public interface IGameplayActions
+    {
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

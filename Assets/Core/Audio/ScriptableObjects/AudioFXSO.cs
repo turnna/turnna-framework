@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Assets.Core.EventChannels.ScriptableObjects;
-using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewAudioFX", menuName = "Audio/AudioFX")]
