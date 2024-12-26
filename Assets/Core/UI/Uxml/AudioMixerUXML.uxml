@@ -1,0 +1,18 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Label text="Audio" />
+    <engine:Slider label="Master" value="0.5" high-value="1" name="audio-mixer__master" low-value="1E-06" fill="true">
+        <Bindings>
+            <engine:DataBinding property="value" data-source-path="AudioSaveData.masterVolume" data-source="project://database/Assets/Core/Data/Game/DefaultCoreSaveData.asset?fileID=11400000&amp;guid=fb078086eec3b6d44b65bfa89d04ca33&amp;type=2#DefaultCoreSaveData" binding-mode="TwoWay" />
+        </Bindings>
+    </engine:Slider>
+    <engine:Slider label="Music" value="0.5" high-value="1" name="audio-mixer__music" low-value="1E-06" fill="true">
+        <Bindings>
+            <engine:DataBinding property="value" data-source-path="AudioSaveData.musicVolume" data-source="project://database/Assets/Core/Data/Game/DefaultCoreSaveData.asset?fileID=11400000&amp;guid=fb078086eec3b6d44b65bfa89d04ca33&amp;type=2#DefaultCoreSaveData" binding-mode="TwoWay" />
+        </Bindings>
+    </engine:Slider>
+    <engine:Slider label="SoundFX" value="0.5" high-value="1" name="audio-mixer__sfx" low-value="1E-06" fill="true">
+        <Bindings>
+            <engine:DataBinding property="value" data-source-path="AudioSaveData.sfxVolume" data-source="project://database/Assets/Core/Data/Game/DefaultCoreSaveData.asset?fileID=11400000&amp;guid=fb078086eec3b6d44b65bfa89d04ca33&amp;type=2#DefaultCoreSaveData" binding-mode="TwoWay" />
+        </Bindings>
+    </engine:Slider>
+</engine:UXML>

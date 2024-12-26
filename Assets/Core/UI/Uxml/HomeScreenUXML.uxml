@@ -2,6 +2,7 @@
     <engine:VisualElement name="home-screen__parent" style="flex-grow: 1;">
         <engine:Label text="HomeScreen&#10;" name="home-screen__header" />
         <engine:Button text="Play" name="home-screen__play" />
+        <engine:Button text="Setting" name="home-screen__setting" />
         <engine:Button text="Quit" name="home-screen__quit" />
     </engine:VisualElement>
 </engine:UXML>
