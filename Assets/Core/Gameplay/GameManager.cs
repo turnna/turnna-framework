@@ -1,4 +1,5 @@
 using Assets.Core.EventChannels.ScriptableObjects;
+using Assets.Core.Gameplay.ScriptableObjects;
 using Assets.Core.Input.ScriptableObjects;
 using Assets.Core.Utilities;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace Assets.Core.Gameplay
         [SerializeField] private GameSetup m_GameSetup;
         [Tooltip("ScriptableObject for relaying input")]
         [SerializeField] private CoreInputReaderSO m_InputReader;
+        [Tooltip("ScriptableObject for game data")]
+        [SerializeField] private GameDataSO m_GameData;
 
         [Header("Broadcast on Event Channels")]
         [Tooltip("Begin gameplay")]
@@ -34,6 +37,7 @@ namespace Assets.Core.Gameplay
         [Header("Listen to Event Channels")]
         [Tooltip("Notifies listeners to go back to main menu scene")]
         [SerializeField] private VoidEventChannelSO m_GameQuit;
+
 
 
         public virtual void OnEnable()
@@ -72,8 +76,8 @@ namespace Assets.Core.Gameplay
             NullRefChecker.Validate(this);
 
             // Initialize the game 
-            m_GameSetup.Initialize(m_InputReader); // TODO: async
-            // m_GameSetup.SetupLevel();
+            m_GameSetup.Initialize(m_GameData, m_InputReader); // TODO: async
+            m_GameSetup.SetupLevel();
 
             // Enable gameplay input
             m_InputReader.EnableGameplayInput();

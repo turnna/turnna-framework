@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a20c1b7b1c07c4c9df559d993e5779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CoreSaveData: {fileID: 0}
+  m_JsonFilename: LevelLayout.json
+  m_PlayerPrefab: {fileID: 3136641188559701780, guid: 0078cc8a72c573f428acf1b2751205e6, type: 3}
 --- !u!114 &2637567899119250137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AutoStart: 1
   m_GameSetup: {fileID: 3507407307503858920}
+  m_InputReader: {fileID: 11400000, guid: 08ee1b17d4272a3499a6be03add4edb4, type: 2}
+  m_GameData: {fileID: 11400000, guid: 496078b13fb01bd44a43b2a3435c5dbd, type: 2}
   m_GameStarted: {fileID: 11400000, guid: ff57dcfbc5d8edd4d8535ee5d76f138b, type: 2}
   m_GameEnded: {fileID: 11400000, guid: 839d91bdaf7ca1440bfc7e291c706025, type: 2}
   m_LastSceneUnloaded: {fileID: 11400000, guid: c04a51c79d3254d4c83df3f267dd664b, type: 2}
