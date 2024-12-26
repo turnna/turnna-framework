@@ -11,9 +11,9 @@ namespace Assets.Core.Gameplay
     public class GameSetup : MonoBehaviour
     {
         // Default filename/subfolder for saving persistent data
-        private const string k_JsonFilename = "CoreSaveData.json";
+        private const string k_JsonFilename = "Save.json";
         private const string k_JsonSubfolder = "Json";
-        private const string k_CoreSaveDataSOName = "CoreSaveDataFromJson";
+        private const string k_CoreSaveDataSOName = "GameSaveData";
 
         [Header("Save Data")]
         [Tooltip("Game data for core gameplay")]
