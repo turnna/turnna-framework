@@ -121,6 +121,7 @@ Transform:
   m_Children:
   - {fileID: 2831065053199578353}
   - {fileID: 5363673739939218228}
+  - {fileID: 6615928603365944214}
   m_Father: {fileID: 6717716495113062082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3344772310648410215
@@ -719,6 +720,54 @@ MonoBehaviour:
   m_ParentName: setting-screen__parent
   m_HideOnAwake: 1
   m_IsTransparent: 0
+--- !u!1 &7316650275371821733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6615928603365944214}
+  - component: {fileID: 3924484738015897918}
+  m_Layer: 0
+  m_Name: QuitButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6615928603365944214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316650275371821733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 890891317021961228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3924484738015897918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316650275371821733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2013e85c20779a409802ad1f4dcb4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Document: {fileID: 3344772310648410215}
+  m_ButtonID: home-screen__quit
+  m_EventChannel: {fileID: 11400000, guid: 35cf8b9bad7f6864387ab13e3ffda0a8, type: 2}
+  m_Delay: 0.5
 --- !u!1 &7877132171872255146
 GameObject:
   m_ObjectHideFlags: 0
