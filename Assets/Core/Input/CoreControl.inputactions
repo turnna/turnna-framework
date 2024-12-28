@@ -2,13 +2,22 @@
     "name": "CoreControl",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "Game",
             "id": "70762da3-1eb0-4a8b-8d56-efbb693bac5c",
             "actions": [
                 {
                     "name": "Escape",
                     "type": "Button",
                     "id": "efff79a8-05c2-44df-82a1-97bc46e5c420",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "14331702-309f-4c4d-8d3c-d828205a9102",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -24,6 +33,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5c44ae2-7f7c-443e-9a10-d555173ca37f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

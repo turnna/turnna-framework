@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: CoreInputReader
   m_EditorClassIdentifier: 
   m_Description: 
-  m_InputEscapeEventChannel: {fileID: 11400000, guid: 12f811d2720bf7f4a817d83302eab1d7, type: 2}
+  m_DisableGameInputChannel: {fileID: 11400000, guid: dc996290543b7ff438e02c4ec3fe35e6, type: 2}
+  m_EnableGameInputChannel: {fileID: 11400000, guid: e8152df5bdc47e94981548acb0515049, type: 2}
+  m_GameEscapeEventChannel: {fileID: 11400000, guid: 12f811d2720bf7f4a817d83302eab1d7, type: 2}
+  m_GameClickEventChannel: {fileID: 11400000, guid: df3514ab9d5742344be091bd0a4116a9, type: 2}
