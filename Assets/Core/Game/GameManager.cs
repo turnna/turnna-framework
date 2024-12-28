@@ -74,7 +74,7 @@ public abstract class GameManager : MonoBehaviour
         m_GameSetup.SetupLevel();
 
         // Enable gameplay input
-        m_InputReader.EnableGameplayInput();
+        m_InputReader.EnableGameInput();
     }
 
 
@@ -101,7 +101,7 @@ public abstract class GameManager : MonoBehaviour
     private void OnUnloadScene()
     {
         // Disable game playinput
-        m_InputReader.DisableGameplayInput();
+        m_InputReader.DisableGameInput();
 
         // Raise event to go back to main menu scene
         m_LastSceneUnloaded.RaiseEvent();
