@@ -9,6 +9,9 @@ using UnityEngine;
 [RequireComponent(typeof(GameSetup))]
 public abstract class GameManager : StateMachine
 {
+    [Tooltip("Required component for setup and initialization")]
+    [SerializeField] private GameSetup m_GameSetup;
+
     [Header("Listen to Event Channels")]
     [Tooltip("Notifies listeners to go back to main menu scene")]
     [SerializeField] private VoidEventChannelSO m_GameQuit;
@@ -16,6 +19,8 @@ public abstract class GameManager : StateMachine
     [Header("Game State")]
     [Tooltip("Game states for the game")]
     [SerializeField] private GameStateSO[] m_GameStates;
+
+    public GameSetup GameSetup => m_GameSetup;
 
     public virtual void OnEnable()
     {
@@ -42,6 +47,9 @@ public abstract class GameManager : StateMachine
     private void Start()
     {
         SwitchState(StateTable[typeof(GameStateStartSO)]);
+
+        // TODO: add auto play feature
+        SwitchState(StateTable[typeof(GameStatePlayingSO)]);
     }
     private void OnGameQuit()
     {

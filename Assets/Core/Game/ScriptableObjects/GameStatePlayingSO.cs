@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "StateMachine/GameState", fileName = "GameState_Playing")]
+[CreateAssetMenu(menuName = "StateMachine/Game State/Playing", fileName = "GameState_Playing")]
 public class GameStatePlayingSO : GameStateSO
 {
     [Tooltip("ScriptableObject for relaying input")]

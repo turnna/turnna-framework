@@ -1,11 +1,8 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "StateMachine/GameState", fileName = "GameState_Initialize")]
+[CreateAssetMenu(menuName = "StateMachine/Game State/Initialize", fileName = "GameState_Initialize")]
 public class GameStateInitializeSO : GameStateSO
 {
-    [Tooltip("Required component for setup and initialization")]
-    [SerializeField] private GameSetup m_GameSetup;
-
     [Tooltip("ScriptableObject for game data")]
     [SerializeField] private GameDataSO m_GameData;
 
@@ -15,8 +12,8 @@ public class GameStateInitializeSO : GameStateSO
     public override void OnStateEnter()
     {
         // Initialize the game 
-        m_GameSetup.Initialize(m_GameData, m_InputReader);
-        m_GameSetup.SetupLevel();
+        GameManager.GameSetup.Initialize(m_GameData, m_InputReader);
+        GameManager.GameSetup.SetupLevel();
 
     }
 
