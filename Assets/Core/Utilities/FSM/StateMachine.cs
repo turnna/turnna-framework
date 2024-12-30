@@ -5,17 +5,17 @@ using UnityEngine;
 /// <summary>
 /// Represents a state machine that manages transitions between different states.
 /// </summary>
-public abstract class StateMachine : MonoBehaviour
+public abstract class StateMachine<T> : MonoBehaviour where T : StateSO
 {
     /// <summary>
     /// The current state of the state machine.
     /// </summary>
-    public IState CurrentState;
+    public T CurrentState;
 
     /// <summary>
     /// A dictionary that holds all possible states of the state machine.
     /// </summary>
-    public Dictionary<Type, IState> StateTable = new();
+    public Dictionary<Type, T> StateTable = new();
 
     /// <summary>
     /// Updates the current state.
@@ -29,7 +29,7 @@ public abstract class StateMachine : MonoBehaviour
     /// Switches the state machine to a new state.
     /// </summary>
     /// <param name="newState">The new state to switch to.</param>
-    public virtual void SwitchState(IState newState)
+    public virtual void SwitchState(T newState)
     {
         CurrentState?.OnStateExit();
         CurrentState = newState;

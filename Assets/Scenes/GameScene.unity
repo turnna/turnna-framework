@@ -228,6 +228,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[0].gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: da4d5bb26298c8f4490897aec00c3a1d, type: 2}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[1].gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: 1230c556468c1a645aefd827c129f65b, type: 2}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[2].gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e0bb2f42ee45bf4798d8c04407257d5, type: 2}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[3].gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: b5f9e2b6e02648a4489fd7f77158d2e0, type: 2}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[4].gameState
+      value: 
+      objectReference: {fileID: 11400000, guid: 806550b9e3d08bd45a987cb09be5c969, type: 2}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[2].eventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 17baef449dc539a43bc45a426a3ce112, type: 2}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[3].eventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: d216f5ad04b6bf84a81a004d5029e10f, type: 2}
+    - target: {fileID: 2637567899119250137, guid: 60a23fa3cf8ab1744b6e966bf5dc2406, type: 3}
+      propertyPath: m_GameStates.Array.data[4].eventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c711529550a4aa4ca2899133e06e984, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

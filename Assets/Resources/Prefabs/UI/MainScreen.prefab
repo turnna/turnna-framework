@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Document: {fileID: 6869843955498050460}
   m_ButtonID: game-menu-screen__resume
-  m_EventChannel: {fileID: 11400000, guid: 93155b749c5518f4ab77d18fb42d4340, type: 2}
+  m_EventChannel: {fileID: 11400000, guid: 17baef449dc539a43bc45a426a3ce112, type: 2}
   m_Delay: 0.5
 --- !u!1 &1966681811818794596
 GameObject:
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Document: {fileID: 7734546601127055175}
   m_ButtonID: game-screen__menu
-  m_EventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
+  m_EventChannel: {fileID: 11400000, guid: d216f5ad04b6bf84a81a004d5029e10f, type: 2}
   m_Delay: 0.5
 --- !u!114 &5818111695803930275
 MonoBehaviour:
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_listenEventChannel: {fileID: 11400000, guid: 12f811d2720bf7f4a817d83302eab1d7, type: 2}
-  m_broadCastEventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
+  m_broadCastEventChannel: {fileID: 11400000, guid: d216f5ad04b6bf84a81a004d5029e10f, type: 2}
   m_Delay: 0.5
 --- !u!1001 &853142353908621162
 PrefabInstance:
