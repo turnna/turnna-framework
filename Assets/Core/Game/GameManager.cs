@@ -32,8 +32,6 @@ public abstract class GameManager : MonoBehaviour
     [Tooltip("Notifies listeners to go back to main menu scene")]
     [SerializeField] private VoidEventChannelSO m_GameQuit;
 
-
-
     public virtual void OnEnable()
     {
         m_GameQuit.OnEventRaised += OnUnloadScene;

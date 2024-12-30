@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class GameSetup : MonoBehaviour
+public abstract class GameSetup : MonoBehaviour
 {
     // Default filename/subfolder for saving persistent data
     private const string k_JsonFilename = "Save.json";
@@ -31,7 +31,7 @@ public class GameSetup : MonoBehaviour
     }
 
 
-    public void Initialize(GameDataSO gameDataSO, CoreInputReaderSO inputReader)
+    public virtual void Initialize(GameDataSO gameDataSO, CoreInputReaderSO inputReader)
     {
         m_InputReader = inputReader;
         m_GameData = gameDataSO;
@@ -47,7 +47,7 @@ public class GameSetup : MonoBehaviour
         NullRefChecker.Validate(this);
     }
 
-    public CoreSaveDataSO InitializeFromJson()
+    public virtual CoreSaveDataSO InitializeFromJson()
     {
         // TODO: Load JSON file
         // Load JSON file
@@ -61,7 +61,7 @@ public class GameSetup : MonoBehaviour
         return tempLevelLayout;
     }
 
-    public void SetupLevel()
+    public virtual void SetupLevel()
     {
 
     }

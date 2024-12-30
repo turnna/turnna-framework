@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 669765754124797523}
-  - component: {fileID: 3507407307503858920}
   - component: {fileID: 2637567899119250137}
+  - component: {fileID: 4345051216879528232}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -33,21 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3507407307503858920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995476228022919177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a20c1b7b1c07c4c9df559d993e5779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CoreSaveData: {fileID: 0}
-  m_JsonFilename: LevelLayout.json
-  m_PlayerPrefab: {fileID: 3136641188559701780, guid: 0078cc8a72c573f428acf1b2751205e6, type: 3}
 --- !u!114 &2637567899119250137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AutoStart: 1
-  m_GameSetup: {fileID: 3507407307503858920}
+  m_GameSetup: {fileID: 4345051216879528232}
   m_InputReader: {fileID: 11400000, guid: 08ee1b17d4272a3499a6be03add4edb4, type: 2}
   m_GameData: {fileID: 11400000, guid: 496078b13fb01bd44a43b2a3435c5dbd, type: 2}
   m_GameStarted: {fileID: 11400000, guid: ff57dcfbc5d8edd4d8535ee5d76f138b, type: 2}
@@ -69,3 +54,17 @@ MonoBehaviour:
   m_LastSceneUnloaded: {fileID: 11400000, guid: c04a51c79d3254d4c83df3f267dd664b, type: 2}
   m_HomeScreenShown: {fileID: 11400000, guid: 5c05915fc8394d041be49bf361f719d0, type: 2}
   m_GameQuit: {fileID: 11400000, guid: 6c711529550a4aa4ca2899133e06e984, type: 2}
+--- !u!114 &4345051216879528232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995476228022919177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960c14861609b354da75cfb55a54b607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CoreSaveData: {fileID: 11400000, guid: fb078086eec3b6d44b65bfa89d04ca33, type: 2}
+  m_JsonFilename: Save.json

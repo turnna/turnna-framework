@@ -11,7 +11,7 @@ using UnityEngine;
 // each state can preload its own assets, raise events on enter and exit 
 
 
-[RequireComponent(typeof(DontDestroyOnLoad))]
+[RequireComponent(typeof(PersistentSingletonObject))]
 public class SequenceManager : MonoBehaviour
 {
 

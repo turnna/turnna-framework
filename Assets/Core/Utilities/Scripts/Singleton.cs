@@ -6,25 +6,39 @@ using UnityEngine;
 /// <typeparam name="T">The type of the singleton instance.</typeparam>
 public abstract class StaticInstace<T> : MonoBehaviour where T : MonoBehaviour
 {
+    protected static T _instance;
+
     /// <summary>
     /// Gets the singleton instance of the specified type.
     /// </summary>
-    public static T Instance { get; private set; }
+    public static T Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindAnyObjectByType<T>();
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(T).Name;
+                    _instance = obj.AddComponent<T>();
+                }
+            }
+            return _instance;
+        }
+    }
 
     /// <summary>
     /// Called when the script instance is being loaded.
     /// Sets the singleton instance to this instance.
     /// </summary>
-    protected virtual void Awake() => Instance = this as T;
-
-    /// <summary>
-    /// Called when the application is quitting.
-    /// Resets the singleton instance to null and destroys the game object.
-    /// </summary>
-    protected virtual void OnApplicationQuit()
+    protected virtual void Awake()
     {
-        Instance = null;
-        Destroy(gameObject);
+        if (_instance == null)
+        {
+            _instance = this as T;
+        }
     }
 }
 
@@ -32,16 +46,29 @@ public abstract class Singleton<T> : StaticInstace<T> where T : MonoBehaviour
 {
     protected override void Awake()
     {
-        if (Instance != null) Destroy(gameObject);
-        base.Awake();
+        if (_instance == null)
+        {
+            _instance = this as T;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 
-public abstract class PersistentSingleton<T> : Singleton<T> where T : MonoBehaviour
+public abstract class PersistentSingleton<T> : StaticInstace<T> where T : MonoBehaviour
 {
     protected override void Awake()
     {
-        base.Awake();
-        DontDestroyOnLoad(gameObject);
+        if (_instance == null)
+        {
+            _instance = this as T;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 }
