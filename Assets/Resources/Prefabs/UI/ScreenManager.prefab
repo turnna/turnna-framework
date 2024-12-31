@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Document: {fileID: 6869843955498050460}
-  m_ButtonID: game-menu-screen__resume
+  m_ButtonID: pause-screen__resume
   m_EventChannel: {fileID: 11400000, guid: 17baef449dc539a43bc45a426a3ce112, type: 2}
   m_Delay: 0.5
 --- !u!1 &1966681811818794596
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 6869843955498050460}
   - component: {fileID: 3084215317895444758}
   m_Layer: 0
-  m_Name: GameMenuScreen
+  m_Name: PauseScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Document: {fileID: 6869843955498050460}
-  m_ParentName: game-menu-screen__parent
+  m_ParentName: pause-screen__parent
   m_HideOnAwake: 1
   m_IsTransparent: 1
 --- !u!1 &6677998756708844470
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Document: {fileID: 6869843955498050460}
-  m_ButtonID: game-menu-screen__quit
+  m_ButtonID: pause-screen__quit
   m_EventChannel: {fileID: 11400000, guid: 6c711529550a4aa4ca2899133e06e984, type: 2}
   m_Delay: 0.5
 --- !u!1 &8660541048908129824
