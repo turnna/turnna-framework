@@ -45,15 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9cf51efc0f94f44adec10eed2eb08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AutoStart: 1
+  CurrentState: {fileID: 0}
   m_GameSetup: {fileID: 4345051216879528232}
-  m_InputReader: {fileID: 11400000, guid: 08ee1b17d4272a3499a6be03add4edb4, type: 2}
-  m_GameData: {fileID: 11400000, guid: 496078b13fb01bd44a43b2a3435c5dbd, type: 2}
-  m_GameStarted: {fileID: 11400000, guid: ff57dcfbc5d8edd4d8535ee5d76f138b, type: 2}
-  m_GameEnded: {fileID: 11400000, guid: 839d91bdaf7ca1440bfc7e291c706025, type: 2}
-  m_LastSceneUnloaded: {fileID: 11400000, guid: c04a51c79d3254d4c83df3f267dd664b, type: 2}
-  m_HomeScreenShown: {fileID: 11400000, guid: 5c05915fc8394d041be49bf361f719d0, type: 2}
-  m_GameQuit: {fileID: 11400000, guid: 6c711529550a4aa4ca2899133e06e984, type: 2}
+  m_GameStates:
+  - eventChannel: {fileID: 0}
+    gameState: {fileID: 11400000, guid: da4d5bb26298c8f4490897aec00c3a1d, type: 2}
+  - eventChannel: {fileID: 11400000, guid: ff57dcfbc5d8edd4d8535ee5d76f138b, type: 2}
+    gameState: {fileID: 11400000, guid: 1230c556468c1a645aefd827c129f65b, type: 2}
+  - eventChannel: {fileID: 11400000, guid: 17baef449dc539a43bc45a426a3ce112, type: 2}
+    gameState: {fileID: 11400000, guid: 3e0bb2f42ee45bf4798d8c04407257d5, type: 2}
+  - eventChannel: {fileID: 11400000, guid: d216f5ad04b6bf84a81a004d5029e10f, type: 2}
+    gameState: {fileID: 11400000, guid: b5f9e2b6e02648a4489fd7f77158d2e0, type: 2}
+  - eventChannel: {fileID: 11400000, guid: 6c711529550a4aa4ca2899133e06e984, type: 2}
+    gameState: {fileID: 11400000, guid: 806550b9e3d08bd45a987cb09be5c969, type: 2}
 --- !u!114 &4345051216879528232
 MonoBehaviour:
   m_ObjectHideFlags: 0

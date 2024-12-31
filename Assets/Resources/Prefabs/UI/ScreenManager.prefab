@@ -168,9 +168,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6717716495113062082}
-  - component: {fileID: 7602102819972154587}
+  - component: {fileID: 2294081924821107894}
   m_Layer: 0
-  m_Name: MainScreen
+  m_Name: ScreenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ Transform:
   - {fileID: 8583049793317026359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7602102819972154587
+--- !u!114 &2294081924821107894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,14 +213,14 @@ MonoBehaviour:
   m_AllScreensHidden: {fileID: 11400000, guid: c252de6bf8ddd8145ad9d7c5c1051086, type: 2}
   m_HomeScreenShown: {fileID: 11400000, guid: 5c05915fc8394d041be49bf361f719d0, type: 2}
   m_DisplayViewOnEvent:
-  - eventChannel: {fileID: 11400000, guid: 93155b749c5518f4ab77d18fb42d4340, type: 2}
-    viewToDisplay: {fileID: 4264076208148275148}
   - eventChannel: {fileID: 11400000, guid: ea6f5904140c52b4e8fb5379add9885a, type: 2}
     viewToDisplay: {fileID: 2623441616787740832}
-  - eventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
-    viewToDisplay: {fileID: 3084215317895444758}
   - eventChannel: {fileID: 11400000, guid: 2d3b0bf35e6540a48b85c9ecb0b77dee, type: 2}
     viewToDisplay: {fileID: 4607981989280853150}
+  - eventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
+    viewToDisplay: {fileID: 3084215317895444758}
+  - eventChannel: {fileID: 11400000, guid: 93155b749c5518f4ab77d18fb42d4340, type: 2}
+    viewToDisplay: {fileID: 4264076208148275148}
 --- !u!1 &1531482112154534268
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Document: {fileID: 6869843955498050460}
-  m_ButtonID: game-menu-screen__resume
-  m_EventChannel: {fileID: 11400000, guid: 93155b749c5518f4ab77d18fb42d4340, type: 2}
+  m_ButtonID: pause-screen__resume
+  m_EventChannel: {fileID: 11400000, guid: 17baef449dc539a43bc45a426a3ce112, type: 2}
   m_Delay: 0.5
 --- !u!1 &1966681811818794596
 GameObject:
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 6869843955498050460}
   - component: {fileID: 3084215317895444758}
   m_Layer: 0
-  m_Name: GameMenuScreen
+  m_Name: PauseScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Document: {fileID: 6869843955498050460}
-  m_ParentName: game-menu-screen__parent
+  m_ParentName: pause-screen__parent
   m_HideOnAwake: 1
   m_IsTransparent: 1
 --- !u!1 &6677998756708844470
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Document: {fileID: 6869843955498050460}
-  m_ButtonID: game-menu-screen__quit
+  m_ButtonID: pause-screen__quit
   m_EventChannel: {fileID: 11400000, guid: 6c711529550a4aa4ca2899133e06e984, type: 2}
   m_Delay: 0.5
 --- !u!1 &8660541048908129824
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Document: {fileID: 7734546601127055175}
   m_ButtonID: game-screen__menu
-  m_EventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
+  m_EventChannel: {fileID: 11400000, guid: d216f5ad04b6bf84a81a004d5029e10f, type: 2}
   m_Delay: 0.5
 --- !u!114 &5818111695803930275
 MonoBehaviour:
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_listenEventChannel: {fileID: 11400000, guid: 12f811d2720bf7f4a817d83302eab1d7, type: 2}
-  m_broadCastEventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
+  m_broadCastEventChannel: {fileID: 11400000, guid: d216f5ad04b6bf84a81a004d5029e10f, type: 2}
   m_Delay: 0.5
 --- !u!1001 &853142353908621162
 PrefabInstance:

@@ -21,7 +21,7 @@ public struct ViewDisplayEventChannel
 /// 
 /// Adapted for UI Toolkit-based elements from the Runner Template.
 /// </summary>
-public class MainScreenManager : MonoBehaviour
+public class ScreenManager : MonoBehaviour
 {
     // Use a low sorting value so the home screen is always at the bottom
     public const int k_HomeScreenSortOrder = -1;
