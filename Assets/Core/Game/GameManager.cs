@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 [Serializable]
@@ -30,7 +31,7 @@ public abstract class GameManager : StateMachine<GameStateSO>
         {
             if (state.eventChannel)
             {
-                state.eventChannel.OnEventRaised += () => SwitchState(state.gameState);
+                state.eventChannel.OnEventRaised = () => SwitchState(state.gameState); // TODO: finding why can't use += -= here
             }
         }
     }
@@ -40,7 +41,7 @@ public abstract class GameManager : StateMachine<GameStateSO>
         {
             if (state.eventChannel)
             {
-                state.eventChannel.OnEventRaised -= () => SwitchState(state.gameState);
+                state.eventChannel.OnEventRaised = null; // TODO: finding why can't use += -= here
             }
         }
     }
@@ -55,7 +56,6 @@ public abstract class GameManager : StateMachine<GameStateSO>
             state.gameState.Initialize(this);
             StateTable.Add(state.gameState.GetType(), state.gameState);
         }
-
         SwitchState(StateTable[typeof(GameStateInitializeSO)]);
     }
 
