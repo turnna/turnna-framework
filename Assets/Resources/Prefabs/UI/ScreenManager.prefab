@@ -168,9 +168,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6717716495113062082}
-  - component: {fileID: 7602102819972154587}
+  - component: {fileID: 2294081924821107894}
   m_Layer: 0
-  m_Name: MainScreen
+  m_Name: ScreenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ Transform:
   - {fileID: 8583049793317026359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7602102819972154587
+--- !u!114 &2294081924821107894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,14 +213,14 @@ MonoBehaviour:
   m_AllScreensHidden: {fileID: 11400000, guid: c252de6bf8ddd8145ad9d7c5c1051086, type: 2}
   m_HomeScreenShown: {fileID: 11400000, guid: 5c05915fc8394d041be49bf361f719d0, type: 2}
   m_DisplayViewOnEvent:
-  - eventChannel: {fileID: 11400000, guid: 93155b749c5518f4ab77d18fb42d4340, type: 2}
-    viewToDisplay: {fileID: 4264076208148275148}
   - eventChannel: {fileID: 11400000, guid: ea6f5904140c52b4e8fb5379add9885a, type: 2}
     viewToDisplay: {fileID: 2623441616787740832}
-  - eventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
-    viewToDisplay: {fileID: 3084215317895444758}
   - eventChannel: {fileID: 11400000, guid: 2d3b0bf35e6540a48b85c9ecb0b77dee, type: 2}
     viewToDisplay: {fileID: 4607981989280853150}
+  - eventChannel: {fileID: 11400000, guid: f6deeb0b5471aff469259efd05159ef3, type: 2}
+    viewToDisplay: {fileID: 3084215317895444758}
+  - eventChannel: {fileID: 11400000, guid: 93155b749c5518f4ab77d18fb42d4340, type: 2}
+    viewToDisplay: {fileID: 4264076208148275148}
 --- !u!1 &1531482112154534268
 GameObject:
   m_ObjectHideFlags: 0
