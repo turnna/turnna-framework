@@ -11,6 +11,9 @@ using UnityEngine.UIElements;
 /// View includes to methods to:
 ///     - Initialize the button click events and document settings
 ///     - Hide and show the parent UI element
+///     
+/// TODO: 
+///     - Add rerendering functionality
 /// </summary>
 public abstract class View : MonoBehaviour
 {
