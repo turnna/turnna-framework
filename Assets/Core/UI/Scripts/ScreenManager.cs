@@ -10,6 +10,7 @@ public struct ViewDisplayEventChannel
     [Tooltip("Signal to listen for")]
     public VoidEventChannelSO eventChannel;
 
+
     [Tooltip("UI view to enable")]
     public View viewToDisplay;
 }
