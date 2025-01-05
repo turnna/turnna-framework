@@ -14,16 +14,16 @@ public struct GameStateEventChannel
 /// This controls the flow of gameplay in the game. The GameManager notifies listeners of
 /// game states. 
 /// </summary>
-[RequireComponent(typeof(GameSetup))]
+// [RequireComponent(typeof(GameSetup))]
 public abstract class GameManager : StateMachine<GameStateSO>
 {
-    [Tooltip("Required component for setup and initialization")]
-    [SerializeField] private GameSetup m_GameSetup;
+    // [Tooltip("Required component for setup and initialization")]
+    // [SerializeField] private GameSetup m_GameSetup;
 
     [Header("Game State")]
     [Tooltip("Game states to manage")]
     [SerializeField] private List<GameStateEventChannel> m_GameStates;
-    public GameSetup GameSetup => m_GameSetup;
+    // public GameSetup GameSetup => m_GameSetup;
 
     public virtual void OnEnable()
     {

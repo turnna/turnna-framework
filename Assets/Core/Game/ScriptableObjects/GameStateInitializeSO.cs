@@ -12,8 +12,8 @@ public class GameStateInitializeSO : GameStateSO
     public override void OnStateEnter()
     {
         // Initialize the game 
-        GameManager.GameSetup.Initialize(m_GameData, m_InputReader);
-        GameManager.GameSetup.SetupLevel();
+        // GameManager.GameSetup.Initialize(m_GameData, m_InputReader);
+        // GameManager.GameSetup.SetupLevel();
 
     }
 
