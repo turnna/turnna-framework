@@ -31,7 +31,6 @@ public class AudioFX : MonoBehaviour
 
     public void PlayAudioFX()
     {
-        Debug.Log("Playing AudioFX");
         m_AudioSource.Play();
     }
 }
