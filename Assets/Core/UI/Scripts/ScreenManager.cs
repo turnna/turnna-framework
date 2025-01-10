@@ -42,8 +42,9 @@ public class ScreenManager : MonoBehaviour
     [Tooltip("Displays the specified View when receiving notification via the event channel")]
     [SerializeField] private List<ViewDisplayEventChannel> m_DisplayViewOnEvent;
 
+    [Header("Debugger Fields")]
     // The currently active View
-    private View m_CurrentView;
+    [SerializeField] private View m_CurrentView;
 
     // A stack of previously displayed Views
     private Stack<View> m_History = new Stack<View>();
